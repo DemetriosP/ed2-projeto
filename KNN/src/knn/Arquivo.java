@@ -8,22 +8,22 @@ import java.util.LinkedList;
 
 public class Arquivo {
 	
-	public void lerArquivo(LinkedList<String[]> lista) {
+	public static void lerArquivo(LinkedList<String[]> lista) {
 		
 		Path caminho = Paths.get("C:/Users/panta/ed2-projeto/KNN/dados.txt");
 		
 		try {
 			
 			BufferedReader br = Files.newBufferedReader(caminho);
-			String linhas = br.readLine();
-			linhas = br.readLine();
+			String linha = br.readLine();
+			linha = br.readLine();
 			
-			while(linhas != null) {
+			while(linha != null) {
 				
-				String[] palavras = linhas.split(",");
+				String[] palavras = linha.split(",");
 				lista.add(palavras);
-				
-				linhas = br.readLine();
+			
+				linha = br.readLine();
 			}
 			
 		}catch(Exception erro) {
